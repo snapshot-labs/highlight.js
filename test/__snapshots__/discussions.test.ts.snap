@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Bun Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Client.discussions addCategory 1`] = `
 {
@@ -9,6 +9,29 @@ exports[`Client.discussions addCategory 1`] = `
     "0xa89aa3531b4c7b310064610ce4530d0a1aecf80f5b1c97b2c65a81883c4e5b6f049320ac641d9133ed00ad818184cbcce6db88989cc9553f2bf0b446fa92e3911c",
   ],
   "method": "add_category",
+}
+`;
+
+exports[`Client.discussions editCategory 1`] = `
+{
+  "agent": "discussions",
+  "args": [
+    1,
+    "ipfs://bafkreig5a634jxenylwhpknv5ccwqotdzmhgbqieyglbdyxffcbgog6xza",
+    "0xc080db2b51cd722462e19275166e2408456eab1d475036202bda682fbebc2fba4c89b85aad101e54aae9a0682c97321d83159d47ba674a947b2e4db6d5322ff11c",
+  ],
+  "method": "edit_category",
+}
+`;
+
+exports[`Client.discussions removeCategory 1`] = `
+{
+  "agent": "discussions",
+  "args": [
+    1,
+    "0x64a18b37845ec92955c208c764b111e8636947876b11d09000311252f6dfd4a61b85938472509c41f3412f6623767c0383741227fccd4cf8067a09852355e3441b",
+  ],
+  "method": "remove_category",
 }
 `;
 
@@ -23,18 +46,6 @@ exports[`Client.discussions addTopic 1`] = `
     "0x02a5252cf69f7160d52d02918fcd439d656b4e59c1fd8a0f8739accde839bd7a4b5c7c2d1d3b5b1f6e2d70820bdd7ce7dc03f82dda066345d7612d97248647991c",
   ],
   "method": "add_topic",
-}
-`;
-
-exports[`Client.discussions editCategory 1`] = `
-{
-  "agent": "discussions",
-  "args": [
-    1,
-    "ipfs://bafkreig5a634jxenylwhpknv5ccwqotdzmhgbqieyglbdyxffcbgog6xza",
-    "0xc080db2b51cd722462e19275166e2408456eab1d475036202bda682fbebc2fba4c89b85aad101e54aae9a0682c97321d83159d47ba674a947b2e4db6d5322ff11c",
-  ],
-  "method": "edit_category",
 }
 `;
 
@@ -61,28 +72,6 @@ exports[`Client.discussions pinTopic 1`] = `
 }
 `;
 
-exports[`Client.discussions removeCategory 1`] = `
-{
-  "agent": "discussions",
-  "args": [
-    1,
-    "0x64a18b37845ec92955c208c764b111e8636947876b11d09000311252f6dfd4a61b85938472509c41f3412f6623767c0383741227fccd4cf8067a09852355e3441b",
-  ],
-  "method": "remove_category",
-}
-`;
-
-exports[`Client.discussions removeTopic 1`] = `
-{
-  "agent": "discussions",
-  "args": [
-    1,
-    "0x535060f92fa4ec30628ddb9738b566c5bff7064ee00a3ab9217d5dfe0258d3bb76c9537b941af9b3e15e50cf3b9cd2480faa6281c859125d615c03b93c24fbba1c",
-  ],
-  "method": "remove_topic",
-}
-`;
-
 exports[`Client.discussions unpinTopic 1`] = `
 {
   "agent": "discussions",
@@ -91,6 +80,19 @@ exports[`Client.discussions unpinTopic 1`] = `
     "0xb6d8a7e495ac2f705cad76faa421683b234f1a2815253f872947475fa9745b5f69470e3d97f7cee6ebb87f0e6dffa97eed587e9c7bd31313734b13a744466ecf1c",
   ],
   "method": "unpin_topic",
+}
+`;
+
+exports[`Client.discussions vote 1`] = `
+{
+  "agent": "discussions",
+  "args": [
+    "0xd96d9e15F6fb8f493784640f1009FbB1C4f1D2D1",
+    1,
+    1,
+    "0x66af0b73ba17fbdcc94df74147f21b6e14c7f0df28224c4a1a4a29984403b400249644919f577538144c6eea48d147f066f46362c1c53bc2f9f3fe28311c6bc01c",
+  ],
+  "method": "vote",
 }
 `;
 
@@ -106,15 +108,13 @@ exports[`Client.discussions unvote 1`] = `
 }
 `;
 
-exports[`Client.discussions vote 1`] = `
+exports[`Client.discussions removeTopic 1`] = `
 {
   "agent": "discussions",
   "args": [
-    "0xd96d9e15F6fb8f493784640f1009FbB1C4f1D2D1",
     1,
-    1,
-    "0x66af0b73ba17fbdcc94df74147f21b6e14c7f0df28224c4a1a4a29984403b400249644919f577538144c6eea48d147f066f46362c1c53bc2f9f3fe28311c6bc01c",
+    "0x535060f92fa4ec30628ddb9738b566c5bff7064ee00a3ab9217d5dfe0258d3bb76c9537b941af9b3e15e50cf3b9cd2480faa6281c859125d615c03b93c24fbba1c",
   ],
-  "method": "vote",
+  "method": "remove_topic",
 }
 `;
