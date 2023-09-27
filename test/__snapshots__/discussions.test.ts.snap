@@ -24,17 +24,6 @@ exports[`Client.discussions editCategory 1`] = `
 }
 `;
 
-exports[`Client.discussions removeCategory 1`] = `
-{
-  "agent": "discussions",
-  "args": [
-    1,
-    "0x64a18b37845ec92955c208c764b111e8636947876b11d09000311252f6dfd4a61b85938472509c41f3412f6623767c0383741227fccd4cf8067a09852355e3441b",
-  ],
-  "method": "remove_category",
-}
-`;
-
 exports[`Client.discussions addTopic 1`] = `
 {
   "agent": "discussions",
@@ -72,17 +61,6 @@ exports[`Client.discussions pinTopic 1`] = `
 }
 `;
 
-exports[`Client.discussions unpinTopic 1`] = `
-{
-  "agent": "discussions",
-  "args": [
-    1,
-    "0xb6d8a7e495ac2f705cad76faa421683b234f1a2815253f872947475fa9745b5f69470e3d97f7cee6ebb87f0e6dffa97eed587e9c7bd31313734b13a744466ecf1c",
-  ],
-  "method": "unpin_topic",
-}
-`;
-
 exports[`Client.discussions vote 1`] = `
 {
   "agent": "discussions",
@@ -93,28 +71,5 @@ exports[`Client.discussions vote 1`] = `
     "0x66af0b73ba17fbdcc94df74147f21b6e14c7f0df28224c4a1a4a29984403b400249644919f577538144c6eea48d147f066f46362c1c53bc2f9f3fe28311c6bc01c",
   ],
   "method": "vote",
-}
-`;
-
-exports[`Client.discussions unvote 1`] = `
-{
-  "agent": "discussions",
-  "args": [
-    "0xd96d9e15F6fb8f493784640f1009FbB1C4f1D2D1",
-    1,
-    "0x30051a708d828432304799843dd9b44abc1d4bd0a967160d6160a21a673132f44805fffdff31cf2f467c80f309428c4c3692312321dfff7e90d39099f6febe381c",
-  ],
-  "method": "unvote",
-}
-`;
-
-exports[`Client.discussions removeTopic 1`] = `
-{
-  "agent": "discussions",
-  "args": [
-    1,
-    "0x535060f92fa4ec30628ddb9738b566c5bff7064ee00a3ab9217d5dfe0258d3bb76c9537b941af9b3e15e50cf3b9cd2480faa6281c859125d615c03b93c24fbba1c",
-  ],
-  "method": "remove_topic",
 }
 `;

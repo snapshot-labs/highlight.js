@@ -1,5 +1,6 @@
 import fetch from 'cross-fetch';
 import { Wallet } from '@ethersproject/wallet';
+import { Profiles } from './agents/profiles';
 import { Discussions } from './agents/discussions';
 import { HIGHLIGHT_TESTNET } from './constants';
 
@@ -12,12 +13,14 @@ interface ClientOptions {
 export class Client {
   private signer?: Wallet;
   public url: string;
+  public profiles: Profiles;
   public discussions: Discussions;
 
   constructor(options?: ClientOptions) {
     this.url = options?.url || HIGHLIGHT_TESTNET;
     this.signer = options?.signer;
     this.discussions = new Discussions(this);
+    this.profiles = new Profiles(this);
   }
 
   setSigner(signer: Wallet) {

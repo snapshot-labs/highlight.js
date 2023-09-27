@@ -1,0 +1,26 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Client.profiles setProfile 1`] = `
+{
+  "agent": "profiles",
+  "args": [
+    "0xeF8305E140ac520225DAf050e2f71d5fBcC543e7",
+    "ipfs://bafkreiasrjkbjlbdeinyxlaq3gph75xa4lra5fy2cqv6sqxg3g2vguuiam",
+    "0x940634e336a4dc8fd2eb60f990c8f794734329def2b3668dd498818328776bc94c61ab8b576aca1edbbbe7e5271a196bbd52cb2d759d9121903994754ccf02db1b",
+  ],
+  "method": "set_profile",
+}
+`;
+
+exports[`Client.profiles setStatement 1`] = `
+{
+  "agent": "profiles",
+  "args": [
+    "0xeF8305E140ac520225DAf050e2f71d5fBcC543e7",
+    "fabien.eth",
+    "ipfs://bafkreigi4upvvcuqkv7ioyrvd2zw3qvw6dl7bsiqtoxox5p4vk4oa5b4h4",
+    "0x624af210910302e02cbb922fef38326ab97e8dd1f387f55d028c4c855b3519ed42f63c63f0afb5610472efb9373c45b86af2458950792a14349c64f92a9dd94c1b",
+  ],
+  "method": "set_statement",
+}
+`;
