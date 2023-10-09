@@ -6,7 +6,7 @@ const WALLET_PRIVATE_KEY = '0x17f690cd9a987781d813e676c9080a9d73a615246d15ab0acf
 const signer = new Wallet(WALLET_PRIVATE_KEY);
 const address = signer.address;
 const client = new Client({
-  url: 'http://localhost:3000/highlight/relayer',
+  url: 'http://localhost:3000/highlight',
   signer
 });
 
