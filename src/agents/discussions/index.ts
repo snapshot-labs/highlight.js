@@ -14,7 +14,7 @@ import {
 } from './types';
 import abi from './abi.json';
 
-const AGENT_ADDRESS = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
+const AGENT_ADDRESS = '0x0000000000000000000000000000000000000002';
 
 export class Discussions extends Agent {
   async addCategory({ name, about, parent }: AddCategory) {

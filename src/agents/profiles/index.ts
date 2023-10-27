@@ -3,7 +3,7 @@ import { Agent } from '../agent';
 import { SetProfile, SetStatement } from './types';
 import abi from './abi.json';
 
-const AGENT_ADDRESS = '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984';
+const AGENT_ADDRESS = '0x0000000000000000000000000000000000000001';
 
 export class Profiles extends Agent {
   async setProfile({ user, name, about, twitter, discord, telegram, github }: SetProfile) {
