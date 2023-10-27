@@ -1,4 +1,4 @@
-import {StaticJsonRpcProvider, Web3Provider} from '@ethersproject/providers';
+import { StaticJsonRpcProvider } from '@ethersproject/providers';
 import { Wallet } from '@ethersproject/wallet';
 import { Contract } from '@ethersproject/contracts';
 import { CHAIN_ID, HIGHLIGHT_TESTNET } from './constants';
@@ -27,8 +27,7 @@ export class Client {
   }
 
   setSigner(signer: Wallet) {
-    signer.connect(this.provider);
-    this.signer = signer;
+    this.signer = signer.connect(this.provider);
   }
 
   async send(address: string, abi: string[], fn: string, args: any[]) {
