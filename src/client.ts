@@ -30,6 +30,29 @@ export class Client {
     this.signer = signer.connect(this.provider);
   }
 
+  async getUnitReceipt(hash: string) {
+    const init = {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        method: 'get_unit_receipt',
+        params: {
+          hash
+        },
+        id: null
+      })
+    };
+
+    const res = await fetch(this.url, init);
+    const { result } = await res.json();
+
+    return result;
+  }
+
   async send(address: string, abi: string[], fn: string, args: any[]) {
     const contract = new Contract(address, abi, this.signer);
 
