@@ -39,7 +39,7 @@ export class Client {
       },
       body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'get_unit_receipt',
+        method: 'hl_getUnitReceipt',
         params: {
           hash
         },
