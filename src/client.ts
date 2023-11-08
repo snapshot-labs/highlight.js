@@ -4,6 +4,7 @@ import { Contract } from '@ethersproject/contracts';
 import { CHAIN_ID, HIGHLIGHT_TESTNET } from './constants';
 import { Profiles } from './agents/profiles';
 import { Discussions } from './agents/discussions';
+import { Votes } from './agents/votes';
 
 interface ClientOptions {
   url?: string;
@@ -17,6 +18,7 @@ export class Client {
   public signer?: Wallet;
   public profiles: Profiles;
   public discussions: Discussions;
+  public votes: Votes;
 
   constructor(options?: ClientOptions) {
     this.url = options?.url || HIGHLIGHT_TESTNET;
@@ -24,6 +26,7 @@ export class Client {
     if (options?.signer) this.setSigner(options.signer);
     this.discussions = new Discussions(this);
     this.profiles = new Profiles(this);
+    this.votes = new Votes(this);
   }
 
   setSigner(signer: Wallet) {
