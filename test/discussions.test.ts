@@ -10,10 +10,6 @@ const client = new Client({
   signer
 });
 
-function getPayload(receipt) {
-  return receipt?.result?.joint?.unit?.messages[0]?.payload;
-}
-
 describe('Client.discussions', () => {
   let category;
   let topic;
