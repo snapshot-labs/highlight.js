@@ -13,7 +13,7 @@ describe('Client.votes', () => {
   it('vote', async () => {
     const result = await client.votes.vote({
       space: '0x9ba3eff2843ac4159d84b975a4aeaa082d716684',
-      voter: '0x556B14CbdA79A36dC33FcD461a04A5BCb5dC2A70',
+      voter: '0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c',
       proposalId: 9,
       choice: 1,
       chainId: 5,
