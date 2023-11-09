@@ -12,10 +12,10 @@ const client = new Client({
 describe('Client.votes', () => {
   it('vote', async () => {
     const result = await client.votes.vote({
-      space: '0x9ba3eff2843ac4159d84b975a4aeaa082d716684',
+      space: '0xa98d476118af1a2c9eab803db9688e33cf68435f',
       voter: '0x8C28Cf33d9Fd3D0293f963b1cd27e3FF422B425c',
-      proposalId: 9,
-      choice: 1,
+      proposalId: 3,
+      choice: 2,
       chainId: 5,
       sig: ''
     });
