@@ -1,39 +1,36 @@
-import fetch from 'cross-fetch';
+import { StaticJsonRpcProvider } from '@ethersproject/providers';
 import { Wallet } from '@ethersproject/wallet';
+import { Contract } from '@ethersproject/contracts';
+import { CHAIN_ID, HIGHLIGHT_TESTNET } from './constants';
 import { Profiles } from './agents/profiles';
 import { Discussions } from './agents/discussions';
-import { HIGHLIGHT_TESTNET } from './constants';
 
 interface ClientOptions {
   url?: string;
+  provider?: StaticJsonRpcProvider;
   signer?: Wallet;
-  mock?: boolean;
 }
 
 export class Client {
-  private signer?: Wallet;
   public url: string;
+  public provider: StaticJsonRpcProvider;
+  public signer?: Wallet;
   public profiles: Profiles;
   public discussions: Discussions;
 
   constructor(options?: ClientOptions) {
     this.url = options?.url || HIGHLIGHT_TESTNET;
-    this.signer = options?.signer;
+    this.provider = options?.provider || new StaticJsonRpcProvider(this.url, CHAIN_ID);
+    if (options?.signer) this.setSigner(options.signer);
     this.discussions = new Discussions(this);
     this.profiles = new Profiles(this);
   }
 
   setSigner(signer: Wallet) {
-    this.signer = signer;
+    this.signer = signer.connect(this.provider);
   }
 
-  async sign(domain, types, message) {
-    if (!this.signer) throw new Error('signer is required');
-
-    return await this.signer._signTypedData(domain, types, message);
-  }
-
-  async invoke(agent: string, method: string, args: any[]) {
+  async getUnitReceipt(hash: string) {
     const init = {
       method: 'POST',
       headers: {
@@ -42,28 +39,23 @@ export class Client {
       },
       body: JSON.stringify({
         jsonrpc: '2.0',
-        method: 'relay',
+        method: 'hl_getUnitReceipt',
         params: {
-          messages: [
-            {
-              type: 'INVOKE_FUNCTION',
-              payload: {
-                agent,
-                method,
-                args
-              }
-            }
-          ]
+          hash
         },
         id: null
       })
     };
 
-    try {
-      const res = await fetch(this.url, init);
-      return await res.json();
-    } catch (e) {
-      console.log('invoke failed', e);
-    }
+    const res = await fetch(this.url, init);
+    const { result } = await res.json();
+
+    return result;
+  }
+
+  async send(address: string, abi: string[], fn: string, args: any[]) {
+    const contract = new Contract(address, abi, this.signer);
+
+    return await contract[fn](...args);
   }
 }

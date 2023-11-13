@@ -14,18 +14,3 @@ export interface SetStatement {
   statement: string;
   status?: 'ACTIVE' | 'INACTIVE' | 'WITHDRAWN';
 }
-
-export const setProfileTypes = {
-  SetProfile: [
-    { name: 'user', type: 'address' },
-    { name: 'metadata_uri', type: 'string' }
-  ]
-};
-
-export const setStatementTypes = {
-  SetStatement: [
-    { name: 'user', type: 'address' },
-    { name: 'org', type: 'string' },
-    { name: 'metadata_uri', type: 'string' }
-  ]
-};
